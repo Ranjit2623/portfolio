@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#030712">
+<title>Ranjit Sapkal | Backend Developer</title>
+<meta name="description" content="Portfolio of Ranjit Sapkal, a Pune developer with 3+ years of experience building REST APIs, integration platforms and dashboards with Node.js, NestJS, MySQL and React.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+:root,:root[data-theme="dark"]{
+  --bg:#030712;--card:rgba(255,255,255,.04);--card2:rgba(255,255,255,.07);--line:rgba(255,255,255,.1);--ink:#F3F4F6;--muted:#9CA3AF;--a1:#818CF8;--a2:#22D3EE;--grad:linear-gradient(90deg,#818CF8,#22D3EE);--ok:#34D399;
+  color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#030712}}
+html{scroll-padding-top:90px;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+body::after{content:"";position:fixed;inset:-20% 10% auto 10%;height:520px;background:radial-gradient(ellipse at center,rgba(99,102,241,.22),rgba(34,211,238,.08) 45%,transparent 70%);pointer-events:none;z-index:-1}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--a2);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(3,7,18,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:rgba(3,7,18,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);z-index:21}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;letter-spacing:.02em;line-height:1.15}
+.logo i{font-style:normal;font-size:13px;padding:6px 8px;border-radius:8px;background:var(--grad);color:#030712}
+.logo small{display:block;font-weight:500;font-size:11.5px;color:var(--muted);letter-spacing:0}
+nav{display:flex;gap:22px;font-size:14.5px;color:var(--muted)}
+nav a{text-decoration:none}nav a:hover{color:var(--ink)}
+.right{display:flex;align-items:center;gap:10px}
+.toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--card)}
+.toggle button{font:600 13px Inter,sans-serif;border:0;background:transparent;color:var(--muted);padding:6px 13px;border-radius:999px;cursor:pointer}
+.toggle button[aria-pressed="true"]{background:var(--card2);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.btn{display:inline-block;padding:11px 20px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--line);background:var(--card);cursor:pointer;color:var(--ink);font-family:inherit}
+.btn.main{background:var(--grad);color:#030712;border:0}
+.btn.sm{padding:8px 15px;font-size:14px}
+.hero{padding:84px 0 56px;max-width:820px}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--muted)}
+.badge b{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px rgba(52,211,153,.18)}
+h1{font-size:clamp(2.8rem,8vw,5.2rem);line-height:1.02;letter-spacing:-.035em;margin:22px 0 10px;font-weight:800}
+.role{font-size:clamp(1.15rem,2.4vw,1.5rem);font-weight:600;margin:0 0 18px}
+.lead{color:var(--muted);font-size:1.07rem;max-width:62ch;margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+section{padding:64px 0}
+.eyebrow{font-size:13px;font-weight:600;color:var(--a2);margin:0 0 8px;letter-spacing:.04em}
+h2{font-size:clamp(1.8rem,4vw,2.5rem);letter-spacing:-.02em;margin:0 0 10px;line-height:1.15;font-weight:800}
+.sub{color:var(--muted);max-width:64ch;margin:0 0 34px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.stat,.card,.group{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.stat b{display:block;font-size:2.4rem;line-height:1.1;font-weight:800;letter-spacing:-.02em}
+.stat span{color:var(--muted);font-size:14.5px}
+.tl{border-left:1px solid var(--line);margin-left:6px;padding-left:28px;position:relative}
+.tl::before{content:"";position:absolute;left:-6px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--grad)}
+.job h3{margin:0;font-size:1.3rem}
+.job .co{color:var(--a2);font-weight:600}
+.meta{color:var(--muted);font-size:14px;margin:2px 0 14px}
+.pill{display:inline-block;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;background:rgba(52,211,153,.12);color:var(--ok);margin-left:8px;vertical-align:middle}
+.outcome{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:12px 16px;margin:0 0 16px;font-size:15px}
+.outcome b{color:var(--a2)}
+ul.pts{margin:0 0 16px;padding-left:20px;color:#D1D5DB}
+ul.pts li{margin:0 0 9px;max-width:74ch}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:0;padding:0;list-style:none}
+.tags li{font-size:12.5px;padding:4px 11px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:#D1D5DB}
+.arch{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-bottom:22px}
+.card h3,.group h3{margin:0 0 6px;font-size:1.08rem}
+.card p,.group p{margin:0;color:var(--muted);font-size:15px}
+.flow{display:grid;gap:12px}
+.node{display:grid;grid-template-columns:190px 1fr;gap:6px 20px;padding:16px 20px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.node b{font-size:15.5px}.node em{font-style:normal;display:block;font-size:12.5px;color:var(--a1);font-weight:600}
+.node p{margin:0;color:var(--muted);font-size:15px}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}
+.proj{display:flex;flex-direction:column;gap:12px;padding:26px}
+.proj .kind{font-size:12.5px;font-weight:600;color:var(--a1)}
+.proj h3{margin:0;font-size:1.4rem}
+.proj .st{color:var(--muted);font-size:14.5px;margin:-6px 0 0}
+.proj p{margin:0;color:#D1D5DB;font-size:15px}
+.proj ul.out{margin:0;padding-left:18px;color:var(--muted);font-size:14.5px}
+.proj .tags{margin-top:auto}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.group .n{font-size:12.5px;color:var(--a2);font-weight:600;margin-bottom:10px;display:block}
+.group ul{list-style:none;margin:0;padding:0;display:grid;gap:7px;color:#D1D5DB;font-size:15px}
+.group li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--a1);margin-right:10px;vertical-align:middle}
+.note{margin-top:22px;text-align:center;color:var(--muted);font-size:14px}
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:28px}
+.chan dl{margin:0}.chan dt{font-size:13px;color:var(--muted);margin-top:16px}.chan dd{margin:2px 0 0;font-weight:600;word-break:break-word}
+.links{display:flex;gap:10px;margin-top:20px}
+form label{display:block;font-size:13.5px;color:var(--muted);margin:0 0 5px}
+form input,form textarea{width:100%;background:rgba(255,255,255,.03);border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:11px 13px;font:inherit;margin-bottom:14px}
+form textarea{min-height:120px;resize:vertical}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+.dl[hidden]{display:none}
+.ico{width:18px;height:18px;margin-right:8px;vertical-align:-4px}
+.modal{position:fixed;inset:0;z-index:40;display:grid;place-items:center;background:rgba(3,7,18,.72);padding:22px}
+.modal[hidden]{display:none}
+.mbox{width:100%;max-width:440px;background:#0B1220;border:1px solid var(--line);border-radius:16px;padding:24px}
+.mbox h3{margin:0 0 6px;font-size:1.25rem}
+.mbox p{margin:0 0 14px;color:var(--muted);font-size:15px}
+.mbox input{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:11px 13px;font:inherit;margin-bottom:14px}
+.mrow{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+#mst{min-height:1.4em;margin:0 0 12px;color:var(--ok)}
+[data-only]{display:none}
+body[data-role="backend"] [data-only~="backend"],body[data-role="full"] [data-only~="full"]{display:revert}
+@media (max-width:820px){nav{display:none}.contact{grid-template-columns:1fr}.node{grid-template-columns:1fr}.hero{padding-top:52px}.logo small{display:none}}
+</style>
+</head>
+<body data-role="backend">
+<header><div class="wrap bar">
+  <a class="logo" href="#top"><i class="mono">&lt;RS/&gt;</i><span>RANJIT SAPKAL<small>Developer, Pune</small></span></a>
+  <nav aria-label="Sections"><a href="#experience">Experience</a><a href="#architecture">Architecture</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+  <div class="right">
+    <div class="toggle" role="group" aria-label="Choose profile"><button type="button" data-set="backend" aria-pressed="true">Backend</button><button type="button" data-set="full" aria-pressed="false">Full stack</button></div>
+    <a class="btn sm dl" href="Ranjit_Sapkal_Backend_Developer_Resume.pdf" download><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" fill="#22D3EE"/><path d="M14 2l6 6h-4a2 2 0 0 1-2-2z" fill="#818CF8"/><path d="M8 13h8M8 17h6" stroke="#030712" stroke-width="1.6" stroke-linecap="round"/></svg>Resume</a>
+    <button type="button" class="btn main sm" id="hire">Hire me</button>
+  </div>
+</div></header>
+
+<main class="wrap" id="top">
+<div class="hero" id="hero">
+  <span class="badge"><b></b><span data-only="backend">Available for full-time backend roles</span><span data-only="full">Available for full-time full stack roles</span></span>
+  <h1>Ranjit <span class="grad">Sapkal</span></h1>
+  <p class="role"><span data-only="backend">Backend Developer</span><span data-only="full">Full Stack Developer</span></p>
+  <p class="lead" data-only="backend">Hi, I’m Ranjit, a backend developer with 3+ years of experience building scalable APIs and business systems. I work with Node.js, NestJS, Express.js and MySQL, and I care about secure access with Keycloak, background jobs that don’t block requests, and logs that make failures easy to trace.</p>
+  <p class="lead" data-only="full">Hi, I’m Ranjit, a full stack developer with 3+ years of experience building web applications from database to interface. I work with React.js, Next.js, Node.js, NestJS and MySQL, and I care about secure access, reliable background processing and dashboards that people can actually use.</p>
+  <div class="cta"><a class="btn main" href="#projects">View projects</a><a class="btn" href="#contact">Get in touch</a><a class="btn dl" href="Ranjit_Sapkal_Backend_Developer_Resume.pdf" download><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" fill="#22D3EE"/><path d="M14 2l6 6h-4a2 2 0 0 1-2-2z" fill="#818CF8"/><path d="M8 13h8M8 17h6" stroke="#030712" stroke-width="1.6" stroke-linecap="round"/></svg>Download resume (PDF)</a></div>
+</div>
+
+<section id="impact" style="padding-top:20px">
+  <p class="eyebrow">Measurable impact</p>
+  <h2>Production engineering track record</h2>
+  <p class="sub">Numbers from the systems I build and maintain at HiddenBrains Infotech.</p>
+  <div class="stats">
+    <div class="stat"><b class="grad">3+</b><span>Years of professional experience</span></div>
+    <div class="stat"><b class="grad">100+</b><span>REST API endpoints designed and maintained</span></div>
+    <div class="stat"><b class="grad">50+</b><span>API routes and consumers managed through Kong</span></div>
+    <div class="stat"><b class="grad">30%</b><span>Less manual gateway configuration effort</span></div>
+  </div>
+</section>
+
+<section id="experience">
+  <p class="eyebrow">Career</p>
+  <h2>Work experience</h2>
+  <p class="sub">Product team work on internal business applications, ERP workflows and system integrations.</p>
+  <div class="tl job">
+    <h3>Software Developer <span class="pill">Present role</span></h3>
+    <div class="meta"><span class="co">HiddenBrains Infotech</span> · Product Unit · Jan 2023 – Present · Pune, India</div>
+    <div class="outcome"><b>Key outcome:</b> 100+ REST APIs powering ERP workflows, integrations and gateway management.</div>
+    <ul class="pts">
+      <li data-only="backend">Build and maintain backend services in Node.js, NestJS, Express.js and MySQL for business applications and system integrations.</li>
+      <li data-only="full">Build and maintain full stack applications with React.js, Next.js, Node.js, NestJS and MySQL, from schema to interface.</li>
+      <li>Design REST APIs with validation, error handling and database integration across production modules.</li>
+      <li data-only="full">Build reusable UI components and admin dashboards with React.js, Next.js, HTML5, CSS3 and Bootstrap.</li>
+      <li>Secure API access with Keycloak and JWT, including role-based access control.</li>
+      <li>Design relational schemas and tune SQL queries and indexes for frequently used operations.</li>
+      <li>Run slow work as background jobs with BullMQ and Redis, and use Elasticsearch and Kibana for log search and troubleshooting.</li>
+      <li>Contribute to CI/CD pipelines and automated tests, and investigate production issues with cross-functional teams.</li>
+    </ul>
+    <ul class="tags"><li>Node.js</li><li>NestJS</li><li>Express.js</li><li>MySQL</li><li>Keycloak</li><li>BullMQ</li><li>Redis</li><li>Elasticsearch</li><li data-only="full">React.js</li><li data-only="full">Next.js</li></ul>
+  </div>
+</section>
+
+<section id="architecture">
+  <p class="eyebrow">Case study</p>
+  <h2>Backend architecture: Application Hub</h2>
+  <p class="sub">How the integration platform keeps third-party syncs reliable without slowing down the API.</p>
+  <div class="arch">
+    <div class="card"><h3>Async by default</h3><p>Synchronization runs as BullMQ jobs on Redis, so an API request returns quickly while the work happens in the background.</p></div>
+    <div class="card"><h3>Traceable failures</h3><p>Sync status and failures are stored in MySQL and searchable in Elasticsearch and Kibana, so a failed integration can be diagnosed quickly.</p></div>
+    <div class="card"><h3>Secure access</h3><p>Connector and configuration APIs sit behind authentication and role-based access control.</p></div>
+  </div>
+  <div class="flow">
+    <div class="node" data-only="full"><div><em>Interface</em><b>React.js and Next.js</b></div><p>Connector setup screens and a live view of integration status.</p></div>
+    <div class="node"><div><em>API layer</em><b>Node.js, NestJS, Express.js</b></div><p>REST endpoints for connector management, library uploads, application configuration and data synchronization.</p></div>
+    <div class="node"><div><em>Job queue</em><b>BullMQ and Redis</b></div><p>Queues synchronization tasks and runs them asynchronously.</p></div>
+    <div class="node"><div><em>Data</em><b>MySQL</b></div><p>Application metadata, connector configurations and synchronization logs.</p></div>
+    <div class="node"><div><em>Observability</em><b>Elasticsearch and Kibana</b></div><p>Log analysis and monitoring for failed integration operations.</p></div>
+  </div>
+</section>
+
+<section id="projects">
+  <p class="eyebrow">Selected work</p>
+  <h2>Featured projects and product systems</h2>
+  <p class="sub">An ERP module set, an integration platform and an API gateway management layer.</p>
+  <div class="projects">
+    <article class="card proj">
+      <span class="kind">Enterprise ERP</span><h3>MRS Production Control</h3><p class="st">Production management platform · Oct 2023 – Present</p>
+      <p>Modules for bills of materials, production orders, batch processing, material requests, inventory consumption, quality tracking and batch costing.</p>
+      <ul class="out"><li>100+ REST APIs on Node.js and Express.js</li><li>MySQL schema linking orders, batches, materials and cost calculations</li><li>Validation, error handling and role-based access control</li></ul>
+      <ul class="tags"><li>Node.js</li><li>Express.js</li><li>MySQL</li><li>REST APIs</li><li data-only="full">React.js</li><li data-only="full">Bootstrap</li></ul>
+    </article>
+    <article class="card proj">
+      <span class="kind">Integration platform</span><h3>Application Hub</h3><p class="st">Connector and sync management · Jan 2025 – Present</p>
+      <p>A central platform for connecting internal systems with third-party applications, with connector management, library uploads and data synchronization.</p>
+      <ul class="out"><li>5+ application connectors</li><li>Background sync with BullMQ and Redis</li><li>Failure tracking with Elasticsearch and Kibana</li></ul>
+      <ul class="tags"><li>NestJS</li><li>Express.js</li><li>MySQL</li><li>BullMQ</li><li>Redis</li><li>Elasticsearch</li><li data-only="full">React.js</li><li data-only="full">Next.js</li></ul>
+    </article>
+    <article class="card proj">
+      <span class="kind">API management</span><h3>API Gateway Management Dashboard</h3><p class="st">Kong gateway control layer · Jan 2026 – Jun 2026</p>
+      <p>Backend services that call the Kong Admin API to manage services, routes, consumers and authentication, so teams can onboard an API without editing gateway configuration by hand.<span data-only="full"> Dashboard built with React.js and Next.js.</span></p>
+      <ul class="out"><li>50+ routes and consumers managed</li><li>Key authentication and rate limiting policies</li><li>30% less manual configuration effort</li></ul>
+      <ul class="tags"><li>Node.js</li><li>Express.js</li><li>MySQL</li><li>Kong</li><li data-only="full">React.js</li><li data-only="full">Next.js</li></ul>
+    </article>
+  </div>
+</section>
+
+<section id="skills">
+  <p class="eyebrow">Toolbox</p>
+  <h2>Core technical skillsets and stack</h2>
+  <p class="sub">The languages, frameworks and tools I use day to day.</p>
+  <div class="skills">
+    <div class="group"><h3>Backend and APIs</h3><span class="n">6 capabilities</span><ul><li>Node.js</li><li>NestJS</li><li>Express.js</li><li>REST API design</li><li>Microservices architecture</li><li>Validation and error handling</li></ul></div>
+    <div class="group"><h3>Data and search</h3><span class="n">6 capabilities</span><ul><li>MySQL and SQL</li><li>MongoDB</li><li>Elasticsearch</li><li>Kibana</li><li>Schema design</li><li>Query optimization and indexing</li></ul></div>
+    <div class="group"><h3>Security and background jobs</h3><span class="n">6 capabilities</span><ul><li>Keycloak</li><li>JWT and refresh tokens</li><li>Role-based access control</li><li>BullMQ</li><li>Redis</li><li>Asynchronous task processing</li></ul></div>
+    <div class="group" data-only="full"><h3>Frontend</h3><span class="n">6 capabilities</span><ul><li>React.js</li><li>Next.js</li><li>JavaScript (ES6+)</li><li>HTML5 and CSS3</li><li>Bootstrap</li><li>React Hooks and Router</li></ul></div>
+    <div class="group"><h3>Delivery and tooling</h3><span class="n">7 capabilities</span><ul><li>Docker</li><li>Git and GitHub</li><li>GitHub Actions and CI/CD</li><li>Automated testing</li><li>Postman</li><li>OpenAPI and Swagger</li><li>AWS (EC2, S3, basic)</li></ul></div>
+  </div>
+</section>
+
+<section id="contact">
+  <p class="eyebrow">Contact</p>
+  <h2>Let’s build something reliable</h2>
+  <p class="sub">Looking for a backend or full stack developer? My inbox is open.</p>
+  <div class="contact">
+    <div class="chan card">
+      <h3 style="margin:0">Contact channels</h3>
+      <dl><dt>Email</dt><dd><a href="mailto:ranjitsapkal20@gmail.com">ranjitsapkal20@gmail.com</a></dd><dt>Location</dt><dd>Pune, India (UTC+5:30)</dd></dl>
+      <div class="links"><a class="btn sm" href="https://linkedin.com/in/ranjit-sapkal" rel="noopener">LinkedIn</a></div>
+    </div>
+    <form class="card" id="f">
+      <h3 style="margin:0 0 14px">Send a message</h3>
+      <label for="n">Your name</label><input id="n" required autocomplete="name">
+      <label for="e">Your email</label><input id="e" type="email" required autocomplete="email">
+      <label for="m">Role or project details</label><textarea id="m" required></textarea>
+      <button class="btn main" type="submit">Open in email app</button>
+    </form>
+  </div>
+</section>
+</main>
+<div class="modal" id="mail" hidden role="dialog" aria-modal="true" aria-labelledby="mt"><div class="mbox"><h3 id="mt">Email Ranjit</h3><p>Copy the address, or open it in your mail app or Gmail.</p><input id="mem" readonly value="ranjitsapkal20@gmail.com" aria-label="Email address"><div class="mrow"><button type="button" class="btn main sm" id="mcopy">Copy email</button><a class="btn sm" id="mapp" href="mailto:ranjitsapkal20@gmail.com" target="_blank" rel="noopener">Mail app</a><a class="btn sm" id="mgm" href="https://mail.google.com/mail/?view=cm&amp;to=ranjitsapkal20@gmail.com" target="_blank" rel="noopener">Gmail</a></div><p id="mst" role="status"></p><button type="button" class="btn sm" id="mclose">Close</button></div></div>
+<div class="wrap"><footer><span>© 2026 Ranjit Sapkal. All rights reserved.</span><span>Built with HTML, CSS and JavaScript</span></footer></div>
+
+<script>
+(function(){
+  var body=document.body,btns=document.querySelectorAll('.toggle button');
+  function set(r){
+    body.setAttribute('data-role',r);
+    btns.forEach(function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-set')===r))});
+    document.title=r==='full'?'Ranjit Sapkal | Full Stack Developer':'Ranjit Sapkal | Backend Developer';
+    document.querySelectorAll('.dl').forEach(function(a){a.href=r==='full'?'Ranjit_Sapkal_Full_Stack_Developer_Resume.pdf':'Ranjit_Sapkal_Backend_Developer_Resume.pdf'});
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.getAttribute('data-set'))})});
+  var EM='ranjitsapkal20@gmail.com',box=document.getElementById('mail'),mst=document.getElementById('mst');
+  function openMail(sub,txt){
+    var s=encodeURIComponent(sub),t=encodeURIComponent(txt||'');
+    document.getElementById('mapp').href='mailto:'+EM+'?subject='+s+'&body='+t;
+    document.getElementById('mgm').href='https://mail.google.com/mail/?view=cm&to='+EM+'&su='+s+'&body='+t;
+    mst.textContent='';box.hidden=false;document.getElementById('mcopy').focus();
+  }
+  function closeMail(){box.hidden=true}
+  document.getElementById('hire').addEventListener('click',function(){openMail('Hiring inquiry','')});
+  document.getElementById('mclose').addEventListener('click',closeMail);
+  box.addEventListener('click',function(x){if(x.target===box)closeMail()});
+  document.addEventListener('keydown',function(x){if(x.key==='Escape')closeMail()});
+  document.getElementById('mcopy').addEventListener('click',function(){
+    var inp=document.getElementById('mem');
+    function fb(){inp.focus();inp.select();var ok=false;try{ok=document.execCommand('copy')}catch(z){}mst.textContent=ok?'Email copied.':'Press Ctrl+C (or Cmd+C) to copy the selected address.'}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(EM).then(function(){mst.textContent='Email copied.'},fb)}else{fb()}
+  });
+  if(location.hash==='#fullstack')set('full');
+  document.getElementById('f').addEventListener('submit',function(ev){
+    ev.preventDefault();var q=['n','e','m'].map(function(i){return document.getElementById(i).value});openMail('Portfolio inquiry from '+q[0],q[2]+'\n\n'+q[0]+' ('+q[1]+')');return;
+    var n=document.getElementById('n').value,e=document.getElementById('e').value,m=document.getElementById('m').value;
+    location.href='mailto:ranjitsapkal20@gmail.com?subject='+encodeURIComponent('Portfolio inquiry from '+n)+'&body='+encodeURIComponent(m+'\n\n'+n+' ('+e+')');
+  });
+})();
+</script>
+</body>
+</html>
